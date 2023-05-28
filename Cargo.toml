@@ -1,0 +1,25 @@
+[package]
+name = "image2textart"
+authors = ["Chudov Sergei <chudov42@gmail.com>"]
+description = "This is rust implementation of image to ASCII(textart)."
+license = "MIT"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.3.0", features = [ "derive" ], optional = true }
+colored = "2.0.0"
+image = "0.24.6"
+terminal_size = "0.2.6"
+
+[features]
+build-image2textart-cli = ["clap"]
+
+[lib]
+name = "image2textart"
+path = "src/lib.rs"
+
+[[bin]]
+name = "image2textart-cli"
+path = "src/cli.rs"
+required-features = ["build-image2textart-cli"]
