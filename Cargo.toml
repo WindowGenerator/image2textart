@@ -2,6 +2,7 @@
 name = "image2textart"
 authors = ["Chudov Sergei <chudov42@gmail.com>"]
 description = "This is rust implementation of image to ASCII(textart)."
+repository = "https://github.com/WindowGenerator/image2textart"
 license = "MIT"
 version = "0.1.0"
 edition = "2021"
@@ -23,3 +24,21 @@ path = "src/lib.rs"
 name = "image2textart-cli"
 path = "src/cli.rs"
 required-features = ["build-image2textart-cli"]
+
+# The profile that 'cargo dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
+
+# Config for 'cargo dist'
+[workspace.metadata.dist]
+# The preferred cargo-dist version to use in CI (Cargo.toml SemVer syntax)
+cargo-dist-version = "0.0.7"
+# The preferred Rust toolchain to use in CI (rustup toolchain syntax)
+rust-toolchain-version = "1.67.1"
+# CI backends to support (see 'cargo dist generate-ci')
+ci = ["github"]
+# The installers to generate for each app
+installers = []
+# Target platforms to build apps for (Rust target-triple syntax)
+targets = ["x86_64-unknown-linux-gnu", "x86_64-apple-darwin", "x86_64-pc-windows-msvc", "aarch64-apple-darwin"]
