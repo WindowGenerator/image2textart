@@ -8,22 +8,14 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-clap = { version = "4.3.0", features = [ "derive" ], optional = true }
+clap = { version = "4.3.0", features = [ "derive" ] }
 colored = "2.0.0"
 image = "0.24.6"
 terminal_size = "0.2.6"
 
-[features]
-build-image2textart-cli = ["clap"]
-
-[lib]
-name = "image2textart"
-path = "src/lib.rs"
-
 [[bin]]
-name = "image2textart-cli"
+name = "image2textart"
 path = "src/cli.rs"
-required-features = ["build-image2textart-cli"]
 
 # The profile that 'cargo dist' will build with
 [profile.dist]
