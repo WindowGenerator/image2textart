@@ -1,7 +1,10 @@
-# IMAGE2TEXTART
-This is rust implementation of image to ascii(textart)
+# Text Art Generator
+
+The Text Art Generator is a command-line tool that converts an image file into ASCII art. It allows you to customize the output by specifying various options.
 
 # Usage:
+
+image2textart-cli [OPTIONS] <FILENAME>
 
 **Arguments:**
 
@@ -19,7 +22,6 @@ This is rust implementation of image to ascii(textart)
 - `-h, --help`: Prints the help message (see a summary with '-h').
 - `-V, --version`: Prints the version number.
 
-
 # Examples:
 
 ## Shrek:
@@ -30,3 +32,8 @@ This is rust implementation of image to ascii(textart)
 
 ## Cool Cat:
 ![CoolCat](./examples/cool-cat.jpg)
+
+
+# License
+
+This tool is released under the [MIT License](./LICENSE).
