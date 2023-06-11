@@ -127,7 +127,8 @@ pub fn image2text_art_matrix(img: DynamicImage, options: Options) -> TextArtMatr
         .map(|i| {
             let (ax, ay, Rgba([r, g, b, a])) = i;
 
-            let saturation = (r as f64 + g as f64 + b as f64 + a as f64) / 1020 as f64;
+            let saturation = ((r as f64 * 0.3 + g as f64 * 0.59 + b as f64 * 0.11) / 255_f64)
+                * (a as f64 / 255_f64);
 
             let chars_count = options.charset.chars().count() - 1;
 

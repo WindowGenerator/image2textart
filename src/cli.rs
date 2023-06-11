@@ -16,6 +16,9 @@ _____                            ___  _            _             _
 Text art generator
 ";
 
+// brightness
+// contrast
+
 #[derive(Debug, Parser)]
 #[command(author, version, about, long_about = TITLE)]
 struct Args {
