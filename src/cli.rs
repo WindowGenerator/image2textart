@@ -94,6 +94,7 @@ fn get_charset_by_name(charset_name: &str, custom_chartset: Option<String>) -> S
 fn get_color_by_name(color_name: &str) -> image2textart::Color {
     match color_name {
         "full" => image2textart::Color::Full,
+        "char" => image2textart::Color::Char,
         "background" => image2textart::Color::Background,
         "gray" => image2textart::Color::Gray,
         "no-color" => image2textart::Color::NoColor,
