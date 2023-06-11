@@ -4,7 +4,7 @@ authors = ["Chudov Sergei <chudov42@gmail.com>"]
 description = "This is rust implementation of image to ASCII(textart)."
 repository = "https://github.com/WindowGenerator/image2textart"
 license = "MIT"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 
 [dependencies]
