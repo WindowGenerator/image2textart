@@ -12,10 +12,11 @@ const CHAR_WIDTH: f32 = 0.714;
 
 #[derive(Debug)]
 pub enum Color {
-    Gray = 0,
-    Full,
+    NoColor = 0,
+    Gray,
+    Char,
     Background,
-    NoColor,
+    Full,
 }
 
 pub struct Options {
@@ -54,6 +55,12 @@ impl fmt::Display for TextArtMatrix {
 
                 match self.color {
                     Color::Full => {
+                        current_char = current_char
+                            .truecolor(*r, *g, *b)
+                            .on_truecolor(*r, *g, *b)
+                            .to_string();
+                    }
+                    Color::Char => {
                         current_char = current_char.truecolor(*r, *g, *b).to_string();
                     }
                     Color::Background => {
